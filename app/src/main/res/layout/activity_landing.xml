@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Landing">
+
+    <!--Circles Background-->
+    <ImageView
+        android:id="@+id/colorBlueCircle3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="364dp"
+        android:background="@drawable/circle_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/colorBlueCircle4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="448dp"
+        android:background="@drawable/circle_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.546"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/colorBlueCircle5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="448dp"
+        android:background="@drawable/circle_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/colorBlueCircle"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="136dp"
+        android:background="@drawable/circle_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/colorBlueCircle2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="236dp"
+        android:background="@drawable/circle_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Circle Image-->
+    <ImageView
+        android:id="@+id/staff"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="248dp"
+        android:background="@drawable/staff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/booking"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="460dp"
+        android:background="@drawable/booking"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/earth"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="460dp"
+        android:background="@drawable/earth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/population"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/population"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/office_building"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="372dp"
+        android:background="@drawable/office_building"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--Worker Image-->
+    <ImageView
+        android:id="@+id/imageViewBook"
+        android:layout_width="512dp"
+        android:layout_height="347dp"
+        android:layout_marginTop="465dp"
+        android:src="@drawable/landing1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
+
+    <!--Logo-->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="154dp"
+        android:layout_height="157dp"
+        android:src="@drawable/book"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <!--Get Started-->
+    <Button
+        android:id="@+id/btnGetStarted"
+        android:layout_width="356dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="636dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="sans-serif-black"
+        android:text="Get Started"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--App Quote-->
+    <TextView
+        android:layout_width="296dp"
+        android:layout_height="262dp"
+        android:layout_marginTop="232dp"
+        android:fontFamily="sans-serif-black"
+        android:text="You Book,                           We Work.                      You Select,                                   We Serve."
+        android:textColor="@android:color/black"
+        android:textSize="40dp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
