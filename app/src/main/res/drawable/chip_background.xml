@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="20dp" /> <!-- Adjust the radius as needed -->
+    <solid android:color="#6ea4e7" /> <!-- Background color of the chip -->
+</shape>

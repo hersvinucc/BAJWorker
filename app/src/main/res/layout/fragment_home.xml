@@ -1,18 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/header_title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Home Fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"
-        android:textColor="@color/black"/>
+        android:text="Booker Finds"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <FrameLayout
+        android:id="@+id/bookerInfo"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/header_title">
+        <ImageView
+            android:id="@+id/bookerProfile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/user_black"
+            android:backgroundTint="@color/lightBlue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/bookerName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Juan Dela Cruz"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/bookerProfile"
+            app:layout_constraintTop_toTopOf="@id/bookerProfile" />
+
+        <TextView
+            android:id="@+id/bookerAddress"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Caloocan City"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/bookerName"
+            app:layout_constraintTop_toTopOf="@id/bookerName" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/postedTime"
+        android:layout_width="85dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="50dp"
+        android:text="10/20/2024"
+        app:layout_constraintTop_toTopOf="@+id/header_title"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/bookerInfo"
+         />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:paddingLeft="50dp"
+        android:text="I'm Looking For A Plumber who fix my Sink!!!"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintTop_toBottomOf="@+id/bookerInfo"
+        />
+
+    <TextView
+        android:id="@+id/durationTime"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="96dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Date Needed:10/30/2024"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookerInfo" />
+
+    <TextView
+        android:id="@+id/pricing"
+        android:layout_width="92dp"
+        android:layout_height="21dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="65dp"
+        android:text="40$-50$"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_bold"
+        app:layout_constraintTop_toBottomOf="@+id/bookerInfo"
+        app:layout_constraintStart_toStartOf="parent"
+         />
+
+    <Button
+        android:id="@+id/requestButton"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/green"
+        android:text="Request"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.916"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Request_Booker_Detail">
+
+
+    <ImageView
+        android:id="@+id/bookerProfile"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/user_black"
+        android:backgroundTint="@color/lightBlue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bookerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Juan Dela Cruz"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@id/bookerProfile"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/bookerAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Caloocan City"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/bookerName"
+        app:layout_constraintStart_toEndOf="@id/bookerProfile"
+         />
+
+    <TextView
+        android:id="@+id/descriptionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bookerAddress"
+        />
+
+    <TextView
+        android:id="@+id/descriptionInput"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/input_bg_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descriptionLabel"
+        />
+
+    <TextView
+        android:id="@+id/scopeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Scope Of Works"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descriptionInput"
+        />
+
+    <TextView
+        android:id="@+id/scopeInput"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/input_bg_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scopeLabel"
+        />
+
+    <TextView
+        android:id="@+id/priceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Pricing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scopeInput"
+        />
+
+    <TextView
+        android:id="@+id/priceChip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="40$- 70$"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:background="@drawable/chip_border"
+        android:textColor="@android:color/black"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/priceLabel"/>
+
+    <TextView
+        android:id="@+id/duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Book Information"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/priceChip"
+        />
+
+    <TextView
+        android:id="@+id/when"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="15sp"
+        android:text="When: March 25, 2024"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/duration"/>
+
+    <TextView
+        android:id="@+id/where"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="15sp"
+        android:text="Where: 143 Mapagmahal St. Bagong Barrio Caloocan City"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/when"
+        />
+
+    <TextView
+        android:id="@+id/categoryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Category"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/where"
+        />
+
+    <TextView
+        android:id="@+id/chipTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Technician"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:background="@drawable/chip_background"
+        android:backgroundTint="@color/lightBlue"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/categoryLabel"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Request Book"
+        android:backgroundTint="@color/green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
