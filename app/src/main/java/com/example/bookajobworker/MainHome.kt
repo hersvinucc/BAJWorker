@@ -1,6 +1,5 @@
 package com.example.bookajobworker
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.content.Intent
@@ -9,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 class MainHome : AppCompatActivity() {
     private lateinit var buttonRequest: Button
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_home)
