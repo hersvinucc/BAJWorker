@@ -5,45 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/buttonSignUp"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
-        android:text="Sign Up"
-        android:textColor="@android:color/black"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="588dp" />
-
-    <Button
-        android:id="@+id/buttonBack2"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
-        android:text="Back"
-        android:textColor="@android:color/black"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="654dp" />
-
-    <EditText
-        android:id="@+id/firstNameSignIn"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="148dp"
-        android:background="@drawable/input_bg_style"
-        android:hint="First Name"
-        android:inputType="text"
-        android:paddingLeft="10dp"
+    <!-- Logo-->
+    <ImageView
+        android:id="@+id/bajLogo2"
+        android:layout_width="157dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/book"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Name-->
+    <EditText
+    android:id="@+id/firstNameSignIn"
+    android:layout_width="350dp"
+    android:layout_height="50dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/input_bg_style"
+    android:hint="First Name"
+    android:inputType="text"
+    android:paddingLeft="10dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.475"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/bajLogo2" />
 
     <EditText
         android:id="@+id/middleNameSignIn"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/input_bg_style"
         android:hint="Middle Name"
         android:inputType="text"
@@ -51,13 +43,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/firstNameSignIn" />
 
     <EditText
         android:id="@+id/lastNameSignIn"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="272dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/input_bg_style"
         android:hint="Last Name"
         android:inputType="text"
@@ -65,27 +57,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/middleNameSignIn" />
 
-    <EditText
-        android:id="@+id/suffixSignIn"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="340dp"
-        android:background="@drawable/input_bg_style"
-        android:hint="Suffix (Optional)"
-        android:inputType="text"
-        android:paddingLeft="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+    <!--Birthdate-->
     <EditText
         android:id="@+id/birthdateSignIn"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="408dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/input_bg_style"
         android:hint="BirthDate"
         android:inputType="date"
@@ -93,15 +72,117 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/lastNameSignIn" />
 
-    <ImageView
-        android:id="@+id/bajLogo2"
-        android:layout_width="157dp"
-        android:layout_height="104dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/book"
+    <!--Others-->
+    <LinearLayout
+        android:id="@+id/othersSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/birthdateSignIn"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/suffixSignIn"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="30dp"
+            android:background="@drawable/input_bg_style"
+            android:hint="Suffix(Optional)"
+            android:inputType="text"
+            android:paddingLeft="10dp" />
+
+        <EditText
+            android:id="@+id/genderSignIn"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="50dp"
+            android:background="@drawable/input_bg_style"
+            android:hint="Gender"
+            android:inputType="text"
+            android:paddingLeft="10dp" />
+    </LinearLayout>
+
+    <!--Address-->
+    <EditText
+        android:id="@+id/contactNumberSignIn"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/input_bg_style"
+        android:hint="Contact Number"
+        android:inputType="phone"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/othersSignIn" />
+
+    <!--Address-->
+    <LinearLayout
+        android:id="@+id/addressSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contactNumberSignIn"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/streetAddressSignIn"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="30dp"
+            android:background="@drawable/input_bg_style"
+            android:hint="Street"
+            android:inputType="text"
+            android:paddingLeft="10dp" />
+
+        <EditText
+            android:id="@+id/cityAddressSignIn"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="50dp"
+            android:background="@drawable/input_bg_style"
+            android:hint="City"
+            android:inputType="text"
+            android:paddingLeft="10dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue"
+        android:text="Sign Up"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonBack2"/>
+
+    <Button
+        android:id="@+id/buttonBack2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue"
+        android:layout_marginBottom="40dp"
+        android:text="Back"
+        android:textColor="@android:color/black" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
