@@ -25,6 +25,7 @@
     android:background="@drawable/input_bg_style"
     android:hint="First Name"
     android:inputType="text"
+        android:fontFamily="@font/poppins_regular"
     android:paddingLeft="10dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.475"
@@ -42,6 +43,7 @@
         android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/firstNameSignIn" />
 
@@ -55,6 +57,7 @@
         android:inputType="text"
         android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/middleNameSignIn" />
@@ -65,14 +68,31 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
         android:background="@drawable/input_bg_style"
-        android:hint="BirthDate"
-        android:inputType="date"
+        android:inputType="none"
+        android:focusable="false"
+        android:hint="Birth Date"
         android:paddingLeft="10dp"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lastNameSignIn" />
+        app:layout_constraintTop_toBottomOf="@id/lastNameSignIn"
+        android:onClick="showDatePickerDialog" />
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:calendarViewShown="false"
+        android:layout_marginTop="220dp"
+        android:layout_gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:datePickerMode="spinner"
+        android:visibility="gone"
+        />
 
     <!--Others-->
     <LinearLayout
@@ -88,6 +108,7 @@
             android:id="@+id/suffixSignIn"
             android:layout_width="0dp"
             android:layout_height="50dp"
+            android:fontFamily="@font/poppins_regular"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:paddingHorizontal="30dp"
@@ -96,70 +117,51 @@
             android:inputType="text"
             android:paddingLeft="10dp" />
 
-        <EditText
+        <Spinner
             android:id="@+id/genderSignIn"
             android:layout_width="0dp"
+            android:fontFamily="@font/poppins_regular"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:paddingHorizontal="50dp"
             android:background="@drawable/input_bg_style"
-            android:hint="Gender"
-            android:inputType="text"
-            android:paddingLeft="10dp" />
+            android:spinnerMode="dropdown"
+            />
+
     </LinearLayout>
 
     <!--Address-->
+
     <EditText
-        android:id="@+id/contactNumberSignIn"
+        android:id="@+id/streetAddressSignIn"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
+        android:layout_weight="1"
         android:background="@drawable/input_bg_style"
-        android:hint="Contact Number"
-        android:inputType="phone"
-        android:paddingLeft="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/othersSignIn" />
-
-    <!--Address-->
-    <LinearLayout
-        android:id="@+id/addressSignIn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="28dp"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="Street"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/contactNumberSignIn"
-        android:orientation="horizontal">
+        app:layout_constraintTop_toBottomOf="@id/othersSignIn"
+        android:inputType="text"
+        android:paddingLeft="10dp" />
 
-        <EditText
-            android:id="@+id/streetAddressSignIn"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:paddingHorizontal="30dp"
-            android:background="@drawable/input_bg_style"
-            android:hint="Street"
-            android:inputType="text"
-            android:paddingLeft="10dp" />
-
-        <EditText
-            android:id="@+id/cityAddressSignIn"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:paddingHorizontal="50dp"
-            android:background="@drawable/input_bg_style"
-            android:hint="City"
-            android:inputType="text"
-            android:paddingLeft="10dp" />
-
-    </LinearLayout>
+    <EditText
+        android:id="@+id/cityAddressSignIn"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/poppins_regular"
+        android:background="@drawable/input_bg_style"
+        android:hint="City"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/streetAddressSignIn"
+        android:inputType="text"
+        android:paddingLeft="10dp" />
 
     <Button
         android:id="@+id/buttonSignUp"

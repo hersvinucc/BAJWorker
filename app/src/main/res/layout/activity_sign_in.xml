@@ -17,12 +17,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <EditText
         android:id="@+id/confirmPassSignIn"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/input_bg_style"
         android:hint="Confirm Password"
         android:inputType="textPassword"
@@ -30,13 +29,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/passwordSignIn" />
+        app:layout_constraintTop_toBottomOf="@id/passwordSignIn" />
 
     <EditText
         android:id="@+id/passwordSignIn"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/input_bg_style"
         android:hint="Password"
         android:inputType="textPassword"
@@ -44,13 +43,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/emailAddressSignIn" />
+        app:layout_constraintTop_toBottomOf="@id/contactNumberSignIn" />
 
     <EditText
         android:id="@+id/usernameSignIn"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="276dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/input_bg_style"
         android:hint="Username"
         android:inputType="text"
@@ -58,13 +57,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/bajLogo" />
 
     <EditText
         android:id="@+id/emailAddressSignIn"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/input_bg_style"
         android:hint="Email Address"
         android:inputType="text"
@@ -72,32 +71,46 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/usernameSignIn" />
+        app:layout_constraintTop_toBottomOf="@id/usernameSignIn" />
+
+    <EditText
+        android:id="@+id/contactNumberSignIn"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/input_bg_style"
+        android:hint="Contact Number"
+        android:inputType="phone"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailAddressSignIn" />
 
     <Button
         android:id="@+id/buttonContinue"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="@color/blue"
         android:text="Continue"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/confirmPassSignIn" />
+        app:layout_constraintBottom_toTopOf="@id/buttonBackToLogin" />
 
     <Button
         android:id="@+id/buttonBackToLogin"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="@color/blue"
         android:text="Back"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/confirmPassSignIn" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
