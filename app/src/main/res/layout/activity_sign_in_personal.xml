@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue"
+        android:text="Sign Up"
+        android:textColor="@android:color/black"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="588dp" />
+
+    <Button
+        android:id="@+id/buttonBack2"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue"
+        android:text="Back"
+        android:textColor="@android:color/black"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="654dp" />
+
+    <EditText
+        android:id="@+id/firstNameSignIn"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="148dp"
+        android:background="@drawable/input_bg_style"
+        android:hint="First Name"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/middleNameSignIn"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="208dp"
+        android:background="@drawable/input_bg_style"
+        android:hint="Middle Name"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/lastNameSignIn"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="272dp"
+        android:background="@drawable/input_bg_style"
+        android:hint="Last Name"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/suffixSignIn"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="340dp"
+        android:background="@drawable/input_bg_style"
+        android:hint="Suffix (Optional)"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/birthdateSignIn"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="408dp"
+        android:background="@drawable/input_bg_style"
+        android:hint="BirthDate"
+        android:inputType="date"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/bajLogo2"
+        android:layout_width="157dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/book"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

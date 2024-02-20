@@ -75,12 +75,12 @@
         app:layout_constraintTop_toTopOf="@id/usernameSignIn" />
 
     <Button
-        android:id="@+id/buttonSignIn"
+        android:id="@+id/buttonContinue"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:backgroundTint="@color/blue"
-        android:text="Sign Up"
+        android:text="Continue"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.474"
@@ -93,7 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:backgroundTint="@color/blue"
-        android:text="Back to Login"
+        android:text="Back"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
