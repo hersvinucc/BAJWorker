@@ -1,5 +1,6 @@
 package com.example.bookajobworker
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,8 +14,15 @@ import java.util.Locale
 import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
+import org.json.JSONObject
 
 class SignUpContinue : AppCompatActivity() {
 
@@ -32,12 +40,16 @@ class SignUpContinue : AppCompatActivity() {
     private lateinit var txtgender: Spinner
     private lateinit var txtstreetadd: EditText
     private lateinit var txtcityadd: EditText
+    private lateinit var workCategory: Spinner
     //Registration Data Init
     private var registrationData: Map<String, Any>? = null
-
+    private val workItems = mutableListOf<Pair<Int, String>>()
+    // Volley Set Up
+    private lateinit var requestQueue: RequestQueue
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in_personal)
+        requestQueue = Volley.newRequestQueue(this)
 
         val genderSpinner: Spinner = findViewById(R.id.genderSignIn)
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -50,16 +62,17 @@ class SignUpContinue : AppCompatActivity() {
             genderSpinner.adapter = adapter
         }
 
-        val workCategory: Spinner = findViewById(R.id.workCategory)
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter.createFromResource(
-            this,
-            R.array.work_category,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            workCategory.adapter = adapter
-        }
+        fetchWork()
+
+//        // Create an ArrayAdapter using the string array and a default spinner layout
+//        ArrayAdapter.createFromResource(
+//            this,
+//            R.array.work_category,
+//            android.R.layout.simple_spinner_item
+//        ).also { adapter ->
+//            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+//            workCategory.adapter = adapter
+//        }
 
         editBirthDate = findViewById(R.id.birthdateSignIn)
         datePicker = findViewById(R.id.datePicker)
@@ -100,6 +113,7 @@ class SignUpContinue : AppCompatActivity() {
         txtgender = findViewById(R.id.genderSignIn)
         txtstreetadd = findViewById(R.id.streetAddressSignIn)
         txtcityadd = findViewById(R.id.cityAddressSignIn)
+        workCategory = findViewById(R.id.workCategory)
     }
 
     //Dialog Show
@@ -136,6 +150,10 @@ class SignUpContinue : AppCompatActivity() {
         val gender = txtgender.selectedItem.toString()
         val staddress = txtstreetadd.text.toString()
         val ctaddress = txtcityadd.text.toString()
+        // Selecting the Right ID
+        val selectedPosition = workCategory.selectedItemPosition
+        val selectedPair = workItems[selectedPosition]
+        val work = selectedPair.first
         val userrole = 1
 
         val newFields = mapOf(
@@ -148,6 +166,7 @@ class SignUpContinue : AppCompatActivity() {
             "streetaddress" to staddress,
             "cityaddress" to ctaddress,
             "user_role" to userrole,
+            "work" to work
         )
 
         registrationData?.let { data ->
@@ -184,4 +203,42 @@ class SignUpContinue : AppCompatActivity() {
         }
         return map
     }
+
+    private fun fetchWork() {
+        val url = "http://192.168.1.12:8000/api/getallwork" // Update the IP address
+        val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
+            { response ->
+                val responseData = response.optJSONObject("data")
+                val data = responseData?.optJSONArray("data")
+                if (data != null) {
+                    // Parse the JSON array and extract the relevant data
+                    for (i in 0 until data.length()) {
+                        val id = data.optJSONObject(i)?.optInt("id")
+                        val item = data.optJSONObject(i)?.optString("work_category")
+                        if (id != null && item != null) {
+                            workItems.add(Pair(id, item))
+                        }
+                    }
+                    // Create an ArrayAdapter with the extracted data
+                    val adapter = ArrayAdapter(
+                        this,
+                        android.R.layout.simple_spinner_item,
+                        workItems.map {it.second}
+                    )
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                    workCategory.adapter = adapter // Assuming workCategory is your Spinner
+                } else {
+                    Log.d("Error, No Data Found", "Data Not Found")
+                }
+            },
+            { error ->
+                // Handle errors here
+                Log.e("Error", "Error occurred: ${error.message}")
+            })
+
+        // Add the request to the RequestQueue
+        requestQueue?.add(jsonObjectRequest)
+    }
+
+
 }
