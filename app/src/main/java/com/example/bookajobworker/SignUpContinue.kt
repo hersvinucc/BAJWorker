@@ -14,12 +14,13 @@ import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.widget.Button
+import android.widget.ImageView
 
 class SignUpContinue : AppCompatActivity() {
 
     private lateinit var editBirthDate: EditText
     private lateinit var datePicker: DatePicker
-    private lateinit var btnBack2: Button
+    private lateinit var btnBack2: ImageView
     private lateinit var btnSignUp: Button
 
     // Fields Initialization
@@ -47,6 +48,17 @@ class SignUpContinue : AppCompatActivity() {
         ).also { adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             genderSpinner.adapter = adapter
+        }
+
+        val workCategory: Spinner = findViewById(R.id.workCategory)
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter.createFromResource(
+            this,
+            R.array.work_category,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            workCategory.adapter = adapter
         }
 
         editBirthDate = findViewById(R.id.birthdateSignIn)

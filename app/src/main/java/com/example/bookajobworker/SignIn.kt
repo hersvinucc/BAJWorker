@@ -5,9 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 
 class SignIn : AppCompatActivity() {
-    private lateinit var btnBackToLogin: Button
+    private lateinit var btnBackToLogin: ImageView
     private lateinit var btnContinue: Button
     private lateinit var txtusername: EditText
     private lateinit var txtemail: EditText

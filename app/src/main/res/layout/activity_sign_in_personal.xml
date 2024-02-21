@@ -163,6 +163,21 @@
         android:inputType="text"
         android:paddingLeft="10dp" />
 
+    <Spinner
+        android:id="@+id/workCategory"
+        android:layout_width="350dp"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="50dp"
+        android:background="@drawable/input_bg_style"
+        android:spinnerMode="dropdown"
+        app:layout_constraintTop_toBottomOf="@id/cityAddressSignIn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
     <Button
         android:id="@+id/buttonSignUp"
         android:layout_width="350dp"
@@ -170,21 +185,20 @@
         android:backgroundTint="@color/blue"
         android:text="Sign Up"
         android:textColor="@android:color/black"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/buttonBack2"/>
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <Button
+    <ImageView
         android:id="@+id/buttonBack2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="350dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
-        android:layout_marginBottom="40dp"
-        android:text="Back"
-        android:textColor="@android:color/black" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/arrow_circle_left"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
