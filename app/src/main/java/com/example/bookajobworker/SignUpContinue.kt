@@ -205,7 +205,8 @@ class SignUpContinue : AppCompatActivity() {
     }
 
     private fun fetchWork() {
-        val url = "http://192.168.1.12:8000/api/getallwork" // Update the IP address
+//        val url = "http://192.168.1.12:8000/api/getallwork" // Update the IP address
+        val url = "https://baj.ucc-bscs.com/api/getallwork"
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
             { response ->
                 val responseData = response.optJSONObject("data")
