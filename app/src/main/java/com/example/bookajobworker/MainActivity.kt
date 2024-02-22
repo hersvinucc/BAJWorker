@@ -73,6 +73,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     .replace(R.id.fragment_container, Settings())
                     .commit()
             }
+
+            R.id.nav_logout -> {
+                SessionManager.logout(this)
+            }
 //
 //            R.id.nav_about -> {
 //                supportFragmentManager.beginTransaction()

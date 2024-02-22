@@ -28,13 +28,13 @@ class Login : AppCompatActivity() {
         if(!SessionManager.isTokenExpired()){
             SessionManager.redirectToLanding(this)
         } else {
-            login()
+            autoLogin()
         }
 
         //For Login Button
         buttonLogin = findViewById(R.id.buttonLogin)
         buttonLogin.setOnClickListener {
-            autoLogin()
+            login()
         }
 
         //For SignIn Button
@@ -53,7 +53,7 @@ class Login : AppCompatActivity() {
         val password = txtpassword.text.toString()
 
         if (username.isNullOrEmpty() || password.isNullOrEmpty()) {
-            Toast.makeText(this, "Username or password cannot be empty", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, "Username or password cannot be empty", Toast.LENGTH_SHORT).show()
             return
         }
         val loginData = LoginData(username, password)
@@ -98,9 +98,11 @@ class Login : AppCompatActivity() {
     private fun autoLogin() {
         val username = SessionManager.getUsername()
         val password = SessionManager.getPassword()
+        txtpassword = findViewById(R.id.editTextPassword)
+        txtusername = findViewById(R.id.editTextUsername)
+        txtusername.setText(username)
+        txtpassword.setText(password)
         LoginData(username.toString(), password.toString())
-        Log.d("badtrip", username.toString())
-        Log.d("yoko na", password.toString())
         login()
     }
 

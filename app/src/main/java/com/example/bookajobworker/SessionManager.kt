@@ -5,6 +5,14 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.Response
+import com.android.volley.VolleyError
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
+import org.json.JSONObject
+
 
 object SessionManager {
     private lateinit var sharedPreferences: SharedPreferences
@@ -63,5 +71,44 @@ object SessionManager {
 
     fun getPassword(): String? {
         return sharedPreferences.getString("password", null)
+    }
+    fun clearSharedPreferences(context: Context) {
+        val editor = sharedPreferences.edit()
+        editor.clear()
+        editor.apply()
+    }
+
+    fun logout(context: Context) {
+        val token = getAccessToken() ?: ""
+        val username = getUsername() ?: ""
+        val password = getPassword() ?: ""
+
+        Log.d("token", token)
+
+        val jsonData = JSONObject()
+        jsonData.put("username", username)
+        jsonData.put("password", password)
+
+        val logoutUrl = "http://192.168.1.12:8000/api/logout"
+
+        val requestQueue: RequestQueue = Volley.newRequestQueue(context)
+        val jsonObjectRequest = object : JsonObjectRequest(
+            Request.Method.POST, logoutUrl, jsonData,
+            Response.Listener { _ ->
+                    clearSharedPreferences(context)
+                    redirectToLanding(context)
+            },
+            Response.ErrorListener { error ->
+                // Handle error
+                Log.e("LogoutError", "Logout request failed: $error")
+            }) {
+            override fun getHeaders(): MutableMap<String, String> {
+                val headers = HashMap<String, String>()
+                // Add Bearer token to the request headers
+                headers["Authorization"] = "Bearer $token"
+                return headers
+            }
+        }
+        requestQueue.add(jsonObjectRequest)
     }
 }

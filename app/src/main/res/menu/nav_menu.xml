@@ -22,6 +22,11 @@
             android:icon="@drawable/user_fill"
             android:title="Settings"/>
 
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/user_fill"
+            android:title="Logout"/>
+
 
 
 <!--        <item-->
