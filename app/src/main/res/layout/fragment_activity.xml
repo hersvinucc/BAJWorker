@@ -107,23 +107,31 @@
         app:layout_constraintTop_toBottomOf="@id/workInformationInput"
         />
 
-    <TextView
-        android:id="@+id/tagsChips"
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/tagsChipsGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:paddingTop="6dp"
-        android:paddingBottom="6dp"
-        android:background="@drawable/chip_background"
-        android:backgroundTint="@color/lightBlue"
-        android:textColor="@android:color/white"
-        android:fontFamily="@font/poppins_regular"
         android:layout_centerInParent="true"
         android:layout_marginStart="30dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tags"/>
+        app:layout_constraintTop_toBottomOf="@id/tags">
+
+        <!-- Example Chip for Selection -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_example"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="@android:color/white"
+            android:background="@drawable/chip_background"
+            android:backgroundTint="@color/lightBlue"
+            android:fontFamily="@font/poppins_regular"
+            android:checkable="true"
+            android:checked="false"/>
+
+        <!-- Add more Chips here as needed -->
+    </com.google.android.material.chip.ChipGroup>
 
     <Button
         android:id="@+id/post"
