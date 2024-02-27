@@ -164,7 +164,7 @@
         android:paddingLeft="10dp" />
 
     <Spinner
-        android:id="@+id/workCategory"
+        android:id="@+id/tagsChips"
         android:layout_width="350dp"
         android:fontFamily="@font/poppins_regular"
         android:layout_height="50dp"
